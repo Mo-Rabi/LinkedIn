@@ -1,0 +1,667 @@
+<!-- user-profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/font-awesome/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/css/bootstrap.min.css"
+      integrity="sha512-Z/def5z5u2aR89OuzYcxmDJ0Bnd5V1cKqBEbvLOiUNWdg9PQeXVvXLI90SE4QOHGlfLqUnDNVAYyZi8UwUTmWQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.min.js"
+      integrity="sha512-fHY2UiQlipUq0dEabSM4s+phmn+bcxSYzXP4vAXItBvBHU7zAM/mkhCZjtBEIJexhOMzZbgFlPLuErlJF2b+0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <style>
+      html {
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        font-size: 18px;
+      }
+      .px-4:hover {
+        border-inline-width: 2px;
+      }
+    </style>
+    <style>
+      /* Media queries */
+      /*  Extra small devices (portrait phones, less than 576px) */
+      @media (max-width: 575.98px) {
+      }
+
+      /* Small devices (landscape phones, less than 768px) */
+      @media (max-width: 767.98px) {
+        #search {
+          display: none;
+        }
+
+      }
+
+      /* Medium devices (tablets, less than 992px) */
+      @media (max-width: 995px) {
+        #ProfileLanguageURL {
+          display: none !important;
+        }
+      }
+
+      /* Large devices (desktops, less than 1200px) */
+      @media (max-width: 1199.98px) {
+      }
+    </style>
+  </head>
+  <body style="background-color: #f3f2f0">
+    <!--! Navbar -->
+    <nav class="navbar navbar-expand-sm bg-white fixed-top pt-2 pb-0">
+      <div class="container-fluid offset-1">
+        <a class="navbar-brand" href="home.html"
+          >
+          <svg width="64px" height="64px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#0A66C2" d="M12.225 12.225h-1.778V9.44c0-.664-.012-1.519-.925-1.519-.926 0-1.068.724-1.068 1.47v2.834H6.676V6.498h1.707v.783h.024c.348-.594.996-.95 1.684-.925 1.802 0 2.135 1.185 2.135 2.728l-.001 3.14zM4.67 5.715a1.037 1.037 0 01-1.032-1.031c0-.566.466-1.032 1.032-1.032.566 0 1.031.466 1.032 1.032 0 .566-.466 1.032-1.032 1.032zm.889 6.51h-1.78V6.498h1.78v5.727zM13.11 2H2.885A.88.88 0 002 2.866v10.268a.88.88 0 00.885.866h10.226a.882.882 0 00.889-.866V2.865a.88.88 0 00-.889-.864z"></path></g></svg>
+        </a>
+
+        <!--! Search input field -->
+        <div class="input-group">
+          <form class="" role="search">
+            <button
+                class="btn btn-outline-secondary bg-body border-0 rounded-pill position-absolute mt-1"
+                id="search"
+                type="button"
+              >
+                <label for="search"
+                  ><i
+                    class="fa fa-search link-secondary ms-2 mt-1"
+                    aria-hidden="true"
+                  ></i
+                ></label>
+              </button>
+            <input
+              class="form-control me-5 mt-1 rounded-pill ps-5"
+              name="search"
+              id="search"
+              type="search"
+              placeholder="search"
+              aria-label="Search"
+            />
+          </form>
+        </div>
+
+        <!--! Responsive burger icon -->
+        <button
+          class="navbar-toggler mt-1"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <span class="input-group-append"> </span>
+
+        <!--! Navbar links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
+            <li class="nav-item d-flex flex-column align-items-center p-1 me-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                data-supported-dps="24x24"
+                fill="currentColor"
+                class="mercado-match"
+                width="24"
+                height="24"
+                focusable="false"
+              >
+                <path
+                  d="M23 9v2h-2v7a3 3 0 01-3 3h-4v-6h-4v6H6a3 3 0 01-3-3v-7H1V9l11-7 5 3.18V2h3v5.09z"
+                ></path>
+              </svg>
+              <a class="nav-link active p-0" aria-current="page" href="#"
+                >Home</a
+              >
+            </li>
+
+            <li class="nav-item d-flex flex-column align-items-center p-1 me-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                data-supported-dps="24x24"
+                fill="currentColor"
+                class="mercado-match"
+                width="24"
+                height="24"
+                focusable="false"
+              >
+                <path
+                  d="M12 16v6H3v-6a3 3 0 013-3h3a3 3 0 013 3zm5.5-3A3.5 3.5 0 1014 9.5a3.5 3.5 0 003.5 3.5zm1 2h-2a2.5 2.5 0 00-2.5 2.5V22h7v-4.5a2.5 2.5 0 00-2.5-2.5zM7.5 2A4.5 4.5 0 1012 6.5 4.49 4.49 0 007.5 2z"
+                ></path>
+              </svg>
+              <a class="nav-link p-0" href="#">Network</a>
+            </li>
+
+            <li class="nav-item d-flex flex-column align-items-center p-1 me-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                data-supported-dps="24x24"
+                fill="currentColor"
+                class="mercado-match"
+                width="24"
+                height="24"
+                focusable="false"
+              >
+                <path
+                  d="M22.84 10.22L21 6h-3.95V5a3 3 0 00-3-3h-4a3 3 0 00-3 3v1H2l2.22 5.18A3 3 0 007 13h14a2 2 0 001.84-2.78zM15.05 6h-6V5a1 1 0 011-1h4a1 1 0 011 1zM7 14h15v3a3 3 0 01-3 3H5a3 3 0 01-3-3V8.54l1.3 3A4 4 0 007 14z"
+                ></path>
+              </svg>
+              <a class="nav-link p-0" href="#">Jobs</a>
+            </li>
+
+            <li class="nav-item d-flex flex-column align-items-center p-1 me-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                data-supported-dps="24x24"
+                fill="currentColor"
+                class="mercado-match"
+                width="24"
+                height="24"
+                focusable="false"
+              >
+                <path
+                  d="M16 4H8a7 7 0 000 14h4v4l8.16-5.39A6.78 6.78 0 0023 11a7 7 0 00-7-7zm-8 8.25A1.25 1.25 0 119.25 11 1.25 1.25 0 018 12.25zm4 0A1.25 1.25 0 1113.25 11 1.25 1.25 0 0112 12.25zm4 0A1.25 1.25 0 1117.25 11 1.25 1.25 0 0116 12.25z"
+                ></path>
+              </svg>
+              <a class="nav-link p-0" href="#">Messaging</a>
+            </li>
+
+            <li class="nav-item d-flex flex-column align-items-center p-1 me-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                data-supported-dps="24x24"
+                fill="currentColor"
+                class="mercado-match"
+                width="24"
+                height="24"
+                focusable="false"
+              >
+                <path
+                  d="M22 19h-8.28a2 2 0 11-3.44 0H2v-1a4.52 4.52 0 011.17-2.83l1-1.17h15.7l1 1.17A4.42 4.42 0 0122 18zM18.21 7.44A6.27 6.27 0 0012 2a6.27 6.27 0 00-6.21 5.44L5 13h14z"
+                ></path>
+              </svg>
+              <a class="nav-link p-0" href="#">Notifications</a>
+              <span
+                class="position-absolute translate-middle p-2 bg-danger border border-light rounded-circle"
+              >
+                <span class="visually-hidden">New alerts</span>
+              </span>
+            </li>
+
+            <li
+              class="nav-item dropdown d-flex flex-column align-items-center p-1 me-1"
+            >
+              <img src="Me_round.png" width="32" alt="" />
+              <a
+                class="nav-link dropdown-toggle p-0"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Me
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="user-profile.html">Account</a></li>
+                <li><hr class="dropdown-divider" /></li>
+
+                <li><a class="dropdown-item" href="">Get Premium</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="">Settings and Privacy</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="">Help</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/login.html">Logout</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="offset-1"></div>
+    </nav>
+
+
+    <!--! Main content -->
+    <div>
+      <div class="container col-10" style="margin-top: 15vh">
+        <div class="row gap-3">
+          <!--? Left side content -->
+          <div class="col col p-0" id="userProfile">
+            <div class="card">
+              <img class="card-img-top mb-3" src="cover.jpeg" alt="cover" />
+              <img
+                src="Me_round.png"
+                class="card-img-top position-absolute rounded-circle"
+                alt="avatar"
+                style="width: 15%; margin-top: 14%; margin-left: 4%"
+              />
+              <div class="card-body">
+                <h3 class="card-title d-inline-block col-8">Mo Rabi</h3>
+                <span class="col fs-5"
+                  ><img
+                    src="https://www.svgrepo.com/show/510025/institution.svg"
+                    width="28"
+                    class="mb-1"
+                  />
+                  Mansoura Uni</span
+                >
+                <p class="card-text">
+                  I help people solve complex problems using technology👨🏻‍💻
+                </p>
+                <span
+                  >Cairo, Egypt
+                  <a
+                    href="#"
+                    class="fs-5 card-link link-primary link-underline-opacity-0 link-underline-opacity-100-hover"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modal"
+                    >Contact info</a
+                  ></span
+                >
+
+                <!--! Buttons -->
+                <div class="container" id="profileButtons">
+                  <a
+                    class="btn btn-primary mt-2 rounded-pill me-1 px-4"
+                    href="#"
+                    style="background-color: #0a66c2; font-weight: 700"
+                    onMouseOver="this.style.backgroundColor='#004182';"
+                    onMouseOut="this.style.backgroundColor='#0a66c2';"
+                    >Open to</a
+                  >
+
+                  <a
+                    class="btn btn-outline-primary mt-2 rounded-pill me-1 px-4"
+                    href="#"
+                    style="color: #106ac3; font-weight: 500"
+                    onMouseOver="this.style.backgroundColor='#e2f0fe';"
+                    onMouseOut="this.style.backgroundColor='#ffffff';"
+                    >Add profile section</a
+                  >
+                  <a
+                    class="btn btn-outline-secondary mt-2 rounded-pill px-4"
+                    href="#"
+                    style="color: #666666; font-weight: 500"
+                    onMouseOver="this.style.backgroundColor='#ebebeb';"
+                    onMouseOut="this.style.backgroundColor='#ffffff';"
+                    >More</a
+                  >
+                </div>
+
+                <!--! Modal -->
+                <div
+                  class="modal fade"
+                  id="modal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog col-8">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                          Mo Rabi
+                        </h1>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body row">
+                        <i
+                          class="fa fa-linkedin-square fs-1 col-1"
+                          aria-hidden="true"
+                        ></i>
+                        <br />
+                        <h4 class="col-6 ms-1 mt-1">&nbsp;Your profile</h4>
+                        <a href="" class="link ms-5 mb-3">
+                          linkedin.com/in/morabi</a
+                        >
+
+                        <i
+                          class="fa fa-phone fs-1 col-1"
+                          aria-hidden="true"
+                        ></i>
+                        <br />
+                        <h4 class="col-6 ms-1 mt-1">&nbsp;Phone</h4>
+                        <p href="" class="ms-5 mb-3">+201002645445 (Mobile)</p>
+
+                        <i
+                          class="fa fa-envelope fs-1 col-1"
+                          aria-hidden="true"
+                        ></i>
+                        <br />
+                        <h4 class="col-6 ms-1 mt-1">&nbsp;Email</h4>
+                        <a href="" class="link ms-5 mb-3">
+                          mo.rabi026@gmail.com</a
+                        >
+
+                        <i
+                          class="fa fa-comment fs-1 col-1"
+                          aria-hidden="true"
+                        ></i>
+                        <br />
+                        <h4 class="col-6 ms-1 mt-1">&nbsp;IM</h4>
+                        <p href="" class="link ms-5 mb-3">
+                          live:mo.rabi (Skype)
+                        </p>
+
+                        <i
+                          class="fa fa-calendar fs-1 col-1"
+                          aria-hidden="true"
+                        ></i>
+                        <br />
+                        <h4 class="col-6 ms-1 mt-1">&nbsp;Birthday</h4>
+                        <p href="" class="link ms-5 mb-3">04/02/1996</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--! Analytics -->
+            <div class="container card mt-3">
+              <h4 class="card-title mt-4 ms-3 mb-0">Analytics</h4>
+              <p class="ms-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  data-supported-dps="16x16"
+                  fill="#666666"
+                  class="mercado-match mb-1"
+                  width="26"
+                  height="26"
+                  focusable="false"
+                >
+                  <path
+                    d="M8 3a8.59 8.59 0 00-8 5 8.54 8.54 0 008 5 8.55 8.55 0 008-5 8.55 8.55 0 00-8-5zm0 8a3 3 0 113-3 3 3 0 01-3 3zm2-3a2 2 0 11-2-2 2 2 0 012 2z"
+                  ></path>
+                </svg>
+                Private to you
+              </p>
+              <div class="card-body d-flex flex-row justify-content-between">
+                <!-- Section A -->
+                <div class="me-2 col-4">
+                  <h5 class="card-title">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      data-supported-dps="24x24"
+                      fill="#404040"
+                      class="mercado-match"
+                      width="30"
+                      focusable="false"
+                    >
+                      <path
+                        d="M12 16v6H3v-6a3 3 0 013-3h3a3 3 0 013 3zm5.5-3A3.5 3.5 0 1014 9.5a3.5 3.5 0 003.5 3.5zm1 2h-2a2.5 2.5 0 00-2.5 2.5V22h7v-4.5a2.5 2.5 0 00-2.5-2.5zM7.5 2A4.5 4.5 0 1012 6.5 4.49 4.49 0 007.5 2z"
+                      ></path>
+                    </svg>
+                    14 profile views
+                  </h5>
+                  <p class="">Discover who's viewed your profile.</p>
+                </div>
+
+                <!-- Section B -->
+                <div class="me-2 col-4">
+                  <h5 class="card-text">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      data-supported-dps="24x24"
+                      fill="#404040"
+                      class="mercado-match"
+                      width="30"
+                      focusable="false"
+                    >
+                      <path
+                        d="M23 20v1H1v-1zM8 9H2v10h6zm7-6H9v16h6zm7 11h-6v5h6z"
+                      ></path>
+                    </svg>
+                    62 post impressions
+                  </h5>
+                  <p class="card-text">
+                    Check out who's engaging with your posts.
+                  </p>
+                </div>
+
+                <!-- Section C -->
+                <div class="col-4">
+                  <h5 class="card-title">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      data-supported-dps="24x24"
+                      fill="#404040"
+                      class="mercado-match"
+                      width="30"
+                      focusable="false"
+                    >
+                      <path
+                        d="M21.41 18.59l-5.27-5.28A6.83 6.83 0 0017 10a7 7 0 10-7 7 6.83 6.83 0 003.31-.86l5.28 5.27a2 2 0 002.82-2.82zM5 10a5 5 0 115 5 5 5 0 01-5-5z"
+                      ></path>
+                    </svg>
+                    13 search appearances
+                  </h5>
+                  <p class="card-text">
+                    See how often you appear in search results.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--? Right side: Profile language + public link && premium Ad  -->
+          <div
+            class="container col-3 p-0"
+            id="ProfileLanguageURL"
+            
+          >
+            <!-- ! Profile language and Public link
+            <div class="mb-3" id="ProfileLanguageURL">
+              <!-- <ul class="list-group list-group-flush">
+                <li class="list-group-item fw-bold fs-5">Profile language <span class="ms-5 fa fa-pencil-square-o"></span> <br><span class="fw-normal">English</span></li>
+                <li class="list-group-item fw-bold fs-5">Public profile URL  <span class="ms-4 fa fa-pencil-square-o"></span> <br><span class="fw-normal">linkedin.com/in/username</span></li>
+              </ul> -->
+            <!-- </div> -->
+            <div class="card col-12 mb-3">
+              <div class="card-body">
+                <h6 class="card-title fw-bold">
+                  Add to your feed
+                  <svg
+                    fill="#00000075"
+                    viewBox="-1.7 0 20.4 20.4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="cf-icon-svg ms-4 mb-1"
+                    stroke="#00000075"
+                    width="25"
+                  >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <path
+                        d="M16.406 10.283a7.917 7.917 0 1 1-7.917-7.917 7.916 7.916 0 0 1 7.917 7.917zM9.48 14.367a1.003 1.003 0 1 0-1.004 1.003 1.003 1.003 0 0 0 1.004-1.003zM7.697 11.53a.792.792 0 0 0 1.583 0V5.262a.792.792 0 0 0-1.583 0z"
+                      ></path>
+                    </g>
+                  </svg>
+                </h6>
+
+                <div class="row">
+                  <div class="col-3">
+                    <img
+                      src="https://www.pngkit.com/png/full/639-6399637_henry-circle-gentleman.png"
+                      alt="avatar"
+                      width="50"
+                    />
+                  </div>
+                  <span class="card-title col-8 fw-bold"
+                    >Mark James <br />
+                    <p class="card-subtitle fw-normal">
+                      Software Engineer
+                    </p></span
+                  >
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary rounded-pill col-8 ms-5 mb-3"
+                  >
+                    + Follow
+                  </button>
+                </div>
+
+                <div class="row">
+                  <div class="col-3">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/4/43/Paul_Circle.png"
+                      alt="avatar"
+                      width="50"
+                    />
+                  </div>
+                  <span class="card-title col-8 fw-bold"
+                    >Paul Jackson
+                    <p class="card-subtitle fw-normal">Tech Lead</p></span
+                  >
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary rounded-pill col-8 ms-5 mb-3"
+                  >
+                    + Follow
+                  </button>
+                </div>
+
+                <div class="row">
+                  <div class="col-3">
+                    <img
+                      src="https://www.kindpng.com/picc/m/497-4973038_profile-picture-circle-png-transparent-png.png"
+                      alt="avatar"
+                      width="50"
+                    />
+                  </div>
+                  <span class="card-title col-8 fw-bold"
+                    >Henry Ferguson
+                    <p class="card-subtitle fw-normal">
+                      Solutions Architect
+                    </p></span
+                  >
+                  <button
+                    type="button"
+                    class="btn btn-outline-secondary rounded-pill col-8 ms-5"
+                  >
+                    + Follow
+                  </button>
+                </div>
+
+                <p class="mt-3">
+                  <a
+                    href="#"
+                    class="link-body-emphasis fw-bold text-body-tertiary"
+                  >
+                    View recommendations
+                    <svg
+                      viewBox="0 -6.5 38 38"
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      fill="#585050"
+                      stroke="#585050"
+                      width="20"
+                    >
+                      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        <title>right-arrow</title>
+                        <desc>Created with Sketch.</desc>
+                        <g
+                          id="icons"
+                          stroke="none"
+                          stroke-width="1"
+                          fill="none"
+                          fill-rule="evenodd"
+                        >
+                          <g
+                            id="ui-gambling-website-lined-icnos-casinoshunter"
+                            transform="translate(-1511.000000, -158.000000)"
+                            fill="#4e5056"
+                            fill-rule="nonzero"
+                          >
+                            <g
+                              id="1"
+                              transform="translate(1350.000000, 120.000000)"
+                            >
+                              <path
+                                d="M187.812138,38.5802109 L198.325224,49.0042713 L198.41312,49.0858421 C198.764883,49.4346574 198.96954,49.8946897 199,50.4382227 L198.998248,50.6209428 C198.97273,51.0514917 198.80819,51.4628128 198.48394,51.8313977 L198.36126,51.9580208 L187.812138,62.4197891 C187.031988,63.1934036 185.770571,63.1934036 184.990421,62.4197891 C184.205605,61.6415481 184.205605,60.3762573 184.990358,59.5980789 L192.274264,52.3739093 L162.99947,52.3746291 C161.897068,52.3746291 161,51.4850764 161,50.3835318 C161,49.2819872 161.897068,48.3924345 162.999445,48.3924345 L192.039203,48.3917152 L184.990421,41.4019837 C184.205605,40.6237427 184.205605,39.3584519 184.990421,38.5802109 C185.770571,37.8065964 187.031988,37.8065964 187.812138,38.5802109 Z"
+                                id="right-arrow"
+                              ></path>
+                            </g>
+                          </g>
+                        </g>
+                      </g></svg
+                  ></a>
+                </p>
+              </div>
+            </div>
+
+            <!--! Premium AD -->
+            <div
+              class="card col-12 mb-3 text-center position-sticky"
+              style="top: 12%"
+            >
+              <h6 class="card-title mt-3">Get your Premium badge!</h6>
+              <p>Mo, invest in your future with this exclusive offer.</p>
+              <div class="align-self-center mb-2">
+                <img src="/Me_round.png" alt="avatar" width="75" />
+                <img
+                  src="https://media.licdn.com/dms/image/C560EAQE5QXI8NcOggQ/rightRail-logo-shrink_200_200/0/1631010989710?e=1693339200&amp;v=beta&amp;t=sWlVv3U9AUCKj6PBIfjspHGenLNyJvIic34VliDTCGM"
+                  alt="LinkedIn Premium"
+                  width="75"
+                />
+              </div>
+              <p>Enjoy 50% off 2 months of LinkedIn Premium!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.1/js/bootstrap.bundle.min.js"
+      integrity="sha512-ToL6UYWePxjhDQKNioSi4AyJ5KkRxY+F1+Fi7Jgh0Hp5Kk2/s8FD7zusJDdonfe5B00Qw+B8taXxF6CFLnqNCw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="user-profile.js"></script>
+  </body>
+</html>
